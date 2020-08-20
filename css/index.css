@@ -12,4 +12,61 @@ body {
     font-size: 1rem;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 3px;
+    height: 50px;
+    width: 75px;
+    border-radius: 4px;
+    background-color: grey;
+    color: white;
+    font-size: 18px;
+}
+
+.calculator {
+    margin: 20px;
+    height: 400px;
+    width: 370px;
+    background-color: #696969;
+    position: relative;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.input {
+    width: 330px;
+    height: 70px;
+    background-color: lightblue;
+    margin: 15px auto;
+    border-radius: 5px;
+    text-align: right;
+    font-size: 36px;
+    padding: 15px 15px;
+}
+
+.buttons {
+    position: relative;
+    height: 285px;
+}
+
+.numbers {
+    height: 200px;
+    width: 285px;
+}
+
+
+button.equals {
+    height: 218px;
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+}
+
+button.period {
+    position: absolute;
+    bottom: 0;
+    right: 265px;
 }

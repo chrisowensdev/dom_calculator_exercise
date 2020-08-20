@@ -53,7 +53,7 @@ result.addEventListener('click', (e) => {
 
 
     while (multiply !== -1) {
-        numArray.splice(multiply, 2, numArray[multiply] * numArray[multiply + 1]);
+        numArray.splice(multiply, 2, numArray[0] * numArray[1]);
 
         multiply = operatorArray.indexOf('*');
     }

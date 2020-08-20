@@ -11,6 +11,7 @@ let resultDisplayed = false;
 
 let numberOperatorsArray = [];
 
+
 numbers.forEach(function (number) {
     number.addEventListener('click', function () {
         input.innerHTML += this.innerHTML;
@@ -26,23 +27,52 @@ operators.forEach(function (operator) {
 });
 
 result.addEventListener('click', function () {
-    console.log("The numbers operators array is currently ", numberOperatorsArray);
     let numbersStringHolder = '';
-    let equalFunctionArray = [];
+    let resultArray = [];
     for (let char of numberOperatorsArray) {
-        console.log('the char is:', char)
         let numReg = /\d/;
         if (numReg.test(char) || char === '.') {
             numbersStringHolder += char;
         } else {
-            equalFunctionArray = [...equalFunctionArray, Number(numbersStringHolder), char];
+            resultArray = [...resultArray, Number(numbersStringHolder), char];
             numbersStringHolder = '';
         }
     }
-    equalFunctionArray = [...equalFunctionArray, Number(numbersStringHolder)];
-    console.log('The array that is inside of the euqals function', equalFunctionArray);
+    resultArray = [...resultArray, Number(numbersStringHolder)];
+
+
+    let multiply = resultArray.indexOf("*");
+    while (multiply !== -1) {
+        resultArray.splice(multiply - 1, 3, resultArray[multiply - 1] * resultArray[multiply + 1]);
+        multiply = resultArray.indexOf('*');
+    }
+
+    let divide = resultArray.indexOf("/");
+    while (divide !== -1) {
+        resultArray.splice(divide - 1, 3, resultArray[divide - 1] / resultArray[divide + 1]);
+        divide = resultArray.indexOf('/');
+    }
+
+    let add = resultArray.indexOf("+");
+    while (add !== -1) {
+        resultArray.splice(add - 1, 3, resultArray[add - 1] + resultArray[add + 1]);
+        add = resultArray.indexOf('+');
+    }
+
+    let subtract = resultArray.indexOf("-");
+    while (subtract !== -1) {
+        resultArray.splice(subtract - 1, 3, resultArray[subtract - 1] - resultArray[subtract + 1]);
+        subtract = resultArray.indexOf('-');
+    }
+
+
+    console.log(resultArray[0])
+    numberOperatorsArray = [...resultArray];
+    input.innerHTML = resultArray[0];
+
 })
 
 clear.addEventListener('click', function () {
     input.innerHTML = '';
+    numberOperatorsArray = [];
 })

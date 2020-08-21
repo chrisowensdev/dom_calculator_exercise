@@ -1,11 +1,12 @@
-## Project title
+## Calculator - DOM Exercise - Digital Crafts
 
-Website boiler plate used to clone for Digital Crafts.
+Create a functional calculator that adds, subtracts, multiplies, and divides.
 
-<!-- ## Decription
-A little more description of what the project is about
+## Decription
 
-## Motivation
+This exercise was used to learn and practice DOM manipuation with click events using `.querySelector()`, `.querySelectorAll()`, `.forEach()`, along with while loops with basic programming knowledge.
+
+<!-- ## Motivation
 A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
 
 ## Challenges and Solutions
@@ -61,4 +62,4 @@ Give proper credits. This could be a link to any repo which inspired you to buil
 ## License
 A short snippet describing the license (MIT, Apache etc)
 
-MIT © [Yourname]() -->
+MIT © [Yourname]() --> -->
